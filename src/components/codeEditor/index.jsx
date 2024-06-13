@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { highlight, languages } from 'prismjs';
 import './styles.css';
 
@@ -15,12 +15,11 @@ const CodeEditor = () => {
 
   ReactDOM.render(<App />, document.getElementById("root"));
 `);
-
+  const preRef = useRef(null);
   const highlighted = highlight(text, languages.javascript, 'javascript');
 
 
   const handleChange = (e) => {
-    console.log(e.target.value);
     setText(e.target.value);
   }
 
@@ -29,11 +28,15 @@ const CodeEditor = () => {
       <pre
       className="overlay-code"
         { ...{dangerouslySetInnerHTML: { __html: highlighted + '<br />' } } }
+        ref={preRef}
       />
       <textarea 
         value={text} 
         onChange={handleChange}
         spellCheck={false}
+        onScroll={(e)=>{
+          preRef.current.scrollTop = e.target.scrollTop;
+        }}
       ></textarea>
     </div>
   )

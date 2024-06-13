@@ -72,6 +72,7 @@ textarea{
     font-family: 'Courier New', Courier, monospace;
     font-size: 16px;
     width: 800px !important;
+    height: 300px !important;
     position: absolute;
     top: 0;
     left: 0;
@@ -86,6 +87,8 @@ textarea{
     font-family: 'Courier New', Courier, monospace;
     font-size: 16px;
     width: 800px;
+    height: 300px;
+    overflow-y: scroll;
     position: absolute;
     top: 0;
     left: 0;
