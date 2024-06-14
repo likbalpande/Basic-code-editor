@@ -1,10 +1,8 @@
-import './App.css'
-import CodeEditor from './components/codeEditor'
+import './App.css';
+import CodeEditor from './components/codeEditor';
 
-function App() {
-  return (
-      <CodeEditor />
-  )
+const App = () => {
+  return <CodeEditor />
 }
 
-export default App
+export default App;
