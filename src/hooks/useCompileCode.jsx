@@ -41,7 +41,7 @@ const useCompileCode = () => {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'client-secret': '2cc9633a62b892b84dff0a9a156ceb95260e112a'
+                'client-secret': import.meta.env.VITE_HACKER_EARTH_CLIENT_SECRET
             },
             body: JSON.stringify({
                 "lang": HACKER_EARTH_LANGUAGE_FORMAT[language],
